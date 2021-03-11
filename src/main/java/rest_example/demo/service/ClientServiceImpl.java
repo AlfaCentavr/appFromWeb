@@ -18,6 +18,15 @@ public class ClientServiceImpl implements ClientService {
     // Переменная для генерации ID клиента
     private static final AtomicInteger CLIENT_ID_HOLDER = new AtomicInteger();
 
+    public ClientServiceImpl() {
+        Client client = new Client();
+        client.setEmail("123@12");
+        client.setName("Client");
+        client.setPhone("123456");
+        client.setId(0);
+        CLIENT_REPOSITORY_MAP.put(0, client);
+    }
+
     @Override
     public void create(Client client) {
         final int clientId = CLIENT_ID_HOLDER.incrementAndGet();
