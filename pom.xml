@@ -88,6 +88,18 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+                                <configuration>
+
+                                    <!--<webXml>C:\dev\projects\getjavajob\socialnetwork\web-app\webapp\WEB-INF\web.xml</webXml>-->
+                                    <webXml>webapp/web/WEB-INF/web.xml</webXml>
+                                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>

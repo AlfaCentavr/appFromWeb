@@ -13,9 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 import rest_example.demo.model.Client;
 import rest_example.demo.service.ClientService;
 
+import javax.annotation.security.DeclareRoles;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
 import java.util.List;
 
 @RestController
+@DeclareRoles("role")
+@ServletSecurity(@HttpConstraint(rolesAllowed = "role"))
 public class ClientController {
 
     private final ClientService clientService;
